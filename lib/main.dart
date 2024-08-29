@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:scopeindiaapp/homepage.dart';
+import 'package:scopeindiaapp/samplepage.dart';
 
 void main() {
-  runApp(const scopeindia());
+  runApp(scopeindia());
 }
 
 class scopeindia extends StatelessWidget {
@@ -13,6 +14,7 @@ class scopeindia extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return  MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: homePage(),
       ),

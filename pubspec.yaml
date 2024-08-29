@@ -75,6 +75,13 @@ flutter:
      - images/scope-india-python-full-stack-course.jpg
      - images/scope-india-software-testing-manual-automation-course.jpg
      - images/5star.png
+     - images/bg.jpg
+     - images/whitebg.jpg
+     - images/bluewhitebg.jpg
+     - logos/snowpark-home-icon1.png
+     - logos/snowpark-home-icon2.png
+     - logos/snowpark-home-icon3.png
+     - logos/snowpark-home-icon4.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
