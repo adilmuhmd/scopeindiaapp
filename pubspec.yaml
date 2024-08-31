@@ -36,6 +36,10 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   carousel_slider: ^5.0.0
+  youtube_player_flutter: ^9.0.3
+  firebase_auth: ^5.2.0
+  cloud_firestore: ^5.3.0
+  firebase_core: ^3.4.0
 
 dev_dependencies:
   flutter_test:
@@ -82,6 +86,9 @@ flutter:
      - logos/snowpark-home-icon2.png
      - logos/snowpark-home-icon3.png
      - logos/snowpark-home-icon4.png
+     - logos/iso_iaflogo.png
+     - images/blue_bg.jpg
+     - images/dark_blue_gradient_background.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

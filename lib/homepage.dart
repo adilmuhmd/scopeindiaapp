@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class homePage extends StatefulWidget {
   const homePage({super.key});
@@ -30,15 +30,22 @@ class _homePageState extends State<homePage> {
   ];
   List <Widget> a = [
   ];
-
-
   var size,height,width;
   var index = 0;
+  final videoURL = "https://www.youtube.com/watch?v=YMx8Bbev6T4";
+  var namecontroller = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
 
-
+    late YoutubePlayerController _controller = YoutubePlayerController(
+      initialVideoId: 'https://www.youtube.com/shorts/eIFj4nYNYbw?feature=share',
+      flags: YoutubePlayerFlags(
+        autoPlay: false,
+        mute: true,
+      ),
+    );
     size = MediaQuery.of(context).size;
     height=size.height;
     width=size.width;
@@ -51,7 +58,7 @@ class _homePageState extends State<homePage> {
             floating: false,
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
-              background: Image.asset("images/bluewhitebg.jpg",
+              background: Image.asset("images/blue_bg.jpg",
               fit: BoxFit.cover,
               ),
               centerTitle: true,
@@ -95,9 +102,122 @@ class _homePageState extends State<homePage> {
                         ),
                       ),
                       height: height/4.5,
-                      width: width/1.2,
+                      width: width/1.1,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            child: YoutubePlayer(
+                              controller: _controller,
+                              showVideoProgressIndicator: true,
+                            ),
+                            height: height/6.5,
+                            width: width/2.5,
+                            color: Colors.red,
+                          ),
+                          Column(
+                            children: [
+                              Text("SCOPE INDIA \n is open 365 days a year",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 10,
+                                  color: Color.fromARGB(200, 0,0,139),
+                                ),
+                                textAlign: TextAlign.start,
+                              ),
+                              Text("We are open 7 days 24 hrs \n to talk to you and listen to your queries.",
+                                style: TextStyle(
+                                  fontSize: 8,
+                                  color: Colors.black,
+                                ),
+                                textAlign: TextAlign.start,
+                              ),
+                              Text("GET A FREE CALL BACK",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 12,
+                                  color: Color.fromARGB(255, 0,128,0),
+                                ),
+                                textAlign: TextAlign.start,
+                              ),
+                              SizedBox(
+                                height: height/200,
+                              ),
+                              Container(
+                                child: TextFormField(
+                                  controller: namecontroller,
+                                  keyboardType: TextInputType.text,
+                                  decoration: InputDecoration(
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(0),
+                                      borderSide: const BorderSide(
+                                        color: Color.fromARGB(255,34, 139, 34),
+                                      ),
+                                    ),
+                                    labelStyle: TextStyle(
+                                        fontSize: 10
+                                    ),
+                                    labelText: "Enter Your Name",
+                                  ),
+                                ),
+                                height: height/55,
+                                width: width/2.5,
+                              ),
+                              SizedBox(
+                                height: height/200,
+                              ),
+                              Container(
+                                child: TextFormField(
+                                  controller: namecontroller,
+                                  keyboardType: TextInputType.text,
+                                  decoration: InputDecoration(
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(0),
+                                      borderSide: const BorderSide(
+                                        color: Color.fromARGB(255,34, 139, 34),
+                                      ),
+                                    ),
+                                    labelStyle: TextStyle(
+                                      fontSize: 10
+                                    ),
+                                    labelText: "Enter Your Num",
+                                  ),
+                                ),
+                                height: height/55,
+                                width: width/2.5,
+                              ),
+                              SizedBox(
+                                height: height/200,
+                              ),
+                              Container(
+                                child: MaterialButton(onPressed: () {
+                                  setState(() {
+
+                                  });
+                                },
+                                  color: Color.fromARGB(255, 60,179,113),
+                                  child: Text("Call Me",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 10
+                                  ),
+                                  ),
+                                ),
+                                height: height/55,
+                                width: width/2.5,
+                              ),
+
+                            ],
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                          ),
+
+                        ],
+                      ),
 
                     ),
+
+
                     SizedBox(
                       height: height/35,
                     ),
@@ -152,7 +272,7 @@ class _homePageState extends State<homePage> {
                     ),
                     MaterialButton(onPressed: () {
                       setState(() {
-                        
+
                       });
                     },
                       child: Text("Recent Placement",
@@ -213,41 +333,205 @@ class _homePageState extends State<homePage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Column(
-                            children: [
-                              Image(image: AssetImage("logos/snowpark-home-icon1.png")),
-                              Text("Training",)
-                            ],
+                          Container(
+                            child: Column(
+                              children: [
+                                Image(image: AssetImage("logos/snowpark-home-icon1.png")),
+                                Text("Training",),
+                                Text("You are trained under Suffix E Solutions working professionals, on-the-job training model",
+                                style: TextStyle(
+                                  fontSize: 6
+                                ),
+                                ),
+                              ],
+                            ),
+                            width: width/5,
                           ),
-                          Column(
-                            children: [
-                              Image(image: AssetImage("logos/snowpark-home-icon2.png"),),
-                              Text("Internship",)
-                            ],
+                          Container(
+                            child: Column(
+                              children: [
+                                Image(image: AssetImage("logos/snowpark-home-icon2.png"),),
+                                Text("Internship",),
+                                Text("After course completion, you will be proceeded to live projects with a 6 months experience certificate",
+                                  style: TextStyle(
+                                      fontSize: 6
+                                  ),
+                                ),
+                              ],
+                            ),
+                            width: width/5,
                           ),
-                          Column(
-                            children: [
-                              Image(image: AssetImage("logos/snowpark-home-icon3.png"),
-                              height: height/12.4,
-                              ),
-                              Text("Grooming",)
-                            ],
+                          Container(
+                            child: Column(
+                              children: [
+                                Image(image: AssetImage("logos/snowpark-home-icon3.png"),
+                                height: height/12.4,
+                                ),
+                                Text("Grooming",),
+                                Text("CV Preparation, Interview Prepartion, and personality Development",
+                                  style: TextStyle(
+                                      fontSize: 6
+                                  ),
+                                ),
+                              ],
+                            ),
+                            width: width/5,
                           ),
-                          Column(
-                            children: [
-                              Image(image: AssetImage("logos/snowpark-home-icon4.png")),
-                              Text("Placement",)
-                            ],
+                          Container(
+                            child: Column(
+                              children: [
+                                Image(image: AssetImage("logos/snowpark-home-icon4.png")),
+                                Text("Placement",),
+                                Text("Gives 100% FREE placement support to all our fellow techies through SCOPE INDIA's Placement Cell ",
+                                  style: TextStyle(
+                                      fontSize: 6
+                                  ),
+                                ),
+                              ],
+                            ),
+                            width: width/5,
                           ),
-                          
+
                         ],
                       ),
                       color: Color.fromARGB(255,220,220,220),
                       height: height/4.5,
                     ),
                     Container(
-                      height: height/3,
-                      color: Color.fromARGB(255, 0,0,139),
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage("images/dark_blue_gradient_background.jpg"),
+                          fit: BoxFit.cover
+                        ),
+                      ),
+                      height: height/2,
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Column(
+                                children: [
+                                  SizedBox(
+                                    height: height/14,
+                                  ),
+                                  Text("1000+",
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: Color.fromARGB(255, 0,191,255),
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  ),
+                                  Container(
+                                    child: Text("STUDENTS ARE \n TRAINED EVERY YEAR",
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.white
+                                    ),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    width: width/3,
+                                  ),
+                                  
+                                ],
+                              ),
+                              Column(
+                                children: [
+                                  Text("30+",
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      color: Color.fromARGB(255, 0,191,255),
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Container(
+                                    child: Text("COMPUTER COURSES",
+                                      style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.white
+                                      ),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    width: width/3,
+                                  ),
+
+                                ],
+                              ),
+                              Column(
+                                children: [
+                                  SizedBox(
+                                    height: height/14,
+                                  ),
+                                  Text("95%",
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      color: Color.fromARGB(255, 0,191,255),
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Container(
+                                    child: Text("STUDENTS ARE GETTING \n PLACED EVERY YEAR",
+                                      style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.white
+                                      ),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    width: width/3,
+                                  ),
+
+                                ],
+                              ),
+                            ],
+                            mainAxisAlignment:MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                          ),
+                          Container(
+                              child: Image(
+                                  image: AssetImage(
+                                      "logos/scope-india-logo-home-page.png",
+                                  ),
+                                width: width/2,
+                              ),
+                          ),
+                          Text("Center for Software, Networking, & Cloud Education",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(
+                            height: height/55,
+                          ),
+                          Text("Kerala: Technopark TVM | Thampanoor TVM | Kaloor Kochi, Tamil Nadu: Distillery Road | Palace Road Nagercoil",
+                          style: TextStyle(
+                            fontSize: 8,
+                            color: Colors.white,
+                          ),
+                            textAlign: TextAlign.center,
+                          ),
+                          Container(
+                              child: Image(
+                                  image: AssetImage("logos/iso_iaflogo.png"),
+                              ),
+                            width: width/2,
+                          ),
+                          Text("An ISO 9001:2015 Certified Company",
+                            style: TextStyle(
+                              fontSize: 8,
+                              color: Colors.white,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          Text("All Rights Reserved Suffix E Solutions © 2007-2024",
+                            style: TextStyle(
+                              fontSize: 8,
+                              color: Colors.white,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+
+                        ],
+                      ),
                     ),
 
 

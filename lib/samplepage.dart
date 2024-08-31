@@ -1,42 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-class MyApp extends StatelessWidget {
+class YouTubePlayerExample extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'TabBar Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(),
-    );
-  }
+  _YouTubePlayerExampleState createState() => _YouTubePlayerExampleState();
 }
 
-class MyHomePage extends StatelessWidget {
+class _YouTubePlayerExampleState extends State<YouTubePlayerExample> {
+  late YoutubePlayerController _controller;
+
   @override
-  Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 3, // Number of tabs
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text('TabBar Example'),
-          bottom: TabBar(
-            tabs: [
-              Tab(icon: Icon(Icons.home), text: 'Home'),
-              Tab(icon: Icon(Icons.search), text: 'Search'),
-              Tab(icon: Icon(Icons.person), text: 'Profile'),
-            ],
-          ),
-        ),
-        body: TabBarView(
-          children: [
-            Center(child: Text('Home Tab')),
-            Center(child: Text('Search Tab')),
-            Center(child: Text('Profile Tab')),
-          ],
-        ),
+  void initState() {
+    super.initState();
+    _controller = YoutubePlayerController(
+      initialVideoId: 'https://www.youtube.com/shorts/eIFj4nYNYbw?',  // Replace with your video ID
+      flags: YoutubePlayerFlags(
+        autoPlay: true,
+        mute: false,
       ),
     );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('YouTube Player Example'),
+      ),
+      body: Column(
+        children: [
+          YoutubePlayer(
+            controller: _controller,
+            showVideoProgressIndicator: true,
+          ),
+          // Additional widgets can go here
+        ],
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 }
