@@ -63,7 +63,7 @@ class _homePageState extends State<homePage> {
               ),
               centerTitle: true,
               title: Image.asset("logos/scope-india-logo-home-page.png",
-              scale: 2.4
+              scale: 2.4,
               ),
             ),
           ),
