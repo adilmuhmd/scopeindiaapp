@@ -86,9 +86,8 @@ class _homePageState extends State<homePage> {
 
                               margin: EdgeInsets.symmetric(horizontal: 5.0),
                               child: Image(image: AssetImage("$i")),
-                              // child: Text('text $i', style: TextStyle(fontSize: 16.0),)
                             );
-                          },
+                            },
                         );
                       }).toList(),
                     ),
