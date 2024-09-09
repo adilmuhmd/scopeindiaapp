@@ -42,7 +42,7 @@ class _navpageState extends State<navpage> {
             BottomNavigationBarItem(icon: Icon(
                 Icons.person
             ),
-                label: "Placement Cell"
+                label: "Profile"
             ),
             BottomNavigationBarItem(icon: Icon(
                 Icons.search
