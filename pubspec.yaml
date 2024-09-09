@@ -89,6 +89,10 @@ flutter:
      - logos/iso_iaflogo.png
      - images/blue_bg.jpg
      - images/dark_blue_gradient_background.jpg
+     - logos/create-account.png
+     - logos/login.png
+     - logos/logincolor.png
+     - images/snowpark-mount.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
@@ -101,12 +105,11 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
+  fonts:
+    - family: Archivo
+      fonts:
+        - asset: fonts/ArchivoBlack-Regular.ttf
+          style: italic
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
