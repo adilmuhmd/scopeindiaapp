@@ -3,8 +3,6 @@ import 'package:scopeindiaapp/firebase_options.dart';
 import 'package:scopeindiaapp/homepage.dart';
 import 'package:scopeindiaapp/homes.dart';
 import 'package:scopeindiaapp/loginpage.dart';
-import 'package:scopeindiaapp/sample2.dart';
-import 'package:scopeindiaapp/sample3.dart';
 import 'package:scopeindiaapp/samplepage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';

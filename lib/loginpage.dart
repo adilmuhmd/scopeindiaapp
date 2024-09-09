@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:scopeindiaapp/homepage.dart';
 import 'package:scopeindiaapp/navigationpage.dart';
-import 'package:scopeindiaapp/sample3.dart';
 import 'package:scopeindiaapp/signuppage.dart';
 
 
