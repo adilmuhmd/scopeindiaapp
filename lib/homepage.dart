@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:scopeindiaapp/coursepage.dart';
+import 'package:scopeindiaapp/courses.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class homePage extends StatefulWidget {
@@ -30,7 +30,7 @@ class _homePageState extends State<homePage> {
 
   ];
   List <Widget> pages = [
-    homePage(),coursepage(),
+    homePage(),courses(),
   ];
   var size,height,width;
   var index = 0;
@@ -66,7 +66,7 @@ class _homePageState extends State<homePage> {
                           return Builder(
                             builder: (BuildContext context) {
                               return Container(
-        
+
                                 margin: EdgeInsets.symmetric(horizontal: 5.0),
                                 child: Image(image: AssetImage("$i")),
                               );
@@ -174,7 +174,7 @@ class _homePageState extends State<homePage> {
                                 Container(
                                   child: MaterialButton(onPressed: () {
                                     setState(() {
-        
+
                                     });
                                   },
                                     color: Color.fromARGB(255, 60,179,113),
@@ -188,25 +188,25 @@ class _homePageState extends State<homePage> {
                                   height: height/55,
                                   width: width/2.5,
                                 ),
-        
+
                               ],
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                             ),
-        
+
                           ],
                         ),
-        
+
                       ),
-        
-        
+
+
                       SizedBox(
                         height: height/35,
                       ),
                       Container(
                         height: height/12,
                         child: Image(image: AssetImage("images/5star.png")),
-        
+
                       ),
                       Text(
                         textAlign: TextAlign.center,
@@ -216,7 +216,7 @@ class _homePageState extends State<homePage> {
                           color: Colors.black,
                         ),
                       ),
-        
+
                       Text(
                           textAlign: TextAlign.center,
                           "SCOPE INDIA, your career partner!",
@@ -226,7 +226,7 @@ class _homePageState extends State<homePage> {
                             color: Color.fromARGB(200, 0,0,139),
                           ),
                         ),
-        
+
                       Text(
                           textAlign: TextAlign.center,
                           "One of India's best Training destinations for Software, Networking, and Cloud Computing courses with 17 years of Industrial experience.",
@@ -236,7 +236,7 @@ class _homePageState extends State<homePage> {
                             color: Color.fromARGB(200, 0,0,139),
                           ),
                         ),
-        
+
                       SizedBox(
                         height: height/35,
                       ),
@@ -254,7 +254,7 @@ class _homePageState extends State<homePage> {
                       ),
                       MaterialButton(onPressed: () {
                         setState(() {
-        
+
                         });
                       },
                         child: Text("Recent Placement",
@@ -268,8 +268,8 @@ class _homePageState extends State<homePage> {
                       ),
                       MaterialButton(onPressed: () {
                         setState(() {
-        
-        
+
+
                         });
                       },
                         child: Text("Courses",
@@ -283,7 +283,7 @@ class _homePageState extends State<homePage> {
                       ),
                       MaterialButton(onPressed: () {
                         setState(() {
-        
+
                         });
                       },
                         child: Text("Register Now!",
@@ -297,7 +297,7 @@ class _homePageState extends State<homePage> {
                       ),
                       MaterialButton(onPressed: () {
                         setState(() {
-        
+
                         });
                       },
                         child: Text("Chat on Whatsapp",
@@ -374,7 +374,7 @@ class _homePageState extends State<homePage> {
                               ),
                               width: width/5,
                             ),
-        
+
                           ],
                         ),
                         color: Color.fromARGB(255,220,220,220),
@@ -414,7 +414,7 @@ class _homePageState extends State<homePage> {
                                       ),
                                       width: width/3,
                                     ),
-        
+
                                   ],
                                 ),
                                 Column(
@@ -436,7 +436,7 @@ class _homePageState extends State<homePage> {
                                       ),
                                       width: width/3,
                                     ),
-        
+
                                   ],
                                 ),
                                 Column(
@@ -461,7 +461,7 @@ class _homePageState extends State<homePage> {
                                       ),
                                       width: width/3,
                                     ),
-        
+
                                   ],
                                 ),
                               ],
@@ -512,12 +512,12 @@ class _homePageState extends State<homePage> {
                               ),
                               textAlign: TextAlign.center,
                             ),
-        
+
                           ],
                         ),
                       ),
-        
-        
+
+
                     ],
                   ),
       ),

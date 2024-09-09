@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:scopeindiaapp/homepage.dart';
-import 'package:scopeindiaapp/navigationpage.dart';
+import 'package:scopeindiaapp/sample3.dart';
 import 'package:scopeindiaapp/signuppage.dart';
 
 
@@ -33,9 +33,7 @@ class _loginpageState extends State<loginpage> {
           children: [
             Container(
               height: height/10,
-              child: ImageIcon(AssetImage("logos/login.png"),
-                size: 80,
-                color: Color.fromARGB(230,0,0,95),
+              child: Image(image: AssetImage("logos/login.png")
               ),
             ),
             const Text("Log In!",
@@ -85,7 +83,7 @@ class _loginpageState extends State<loginpage> {
 
                   // If login is successful, you can navigate to the next screen or perform other actions.
                   print("Login successful: ${userCredential.user?.email}");
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => navpage(),));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => sample3(),));
 
 
 

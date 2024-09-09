@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:scopeindiaapp/coursepage.dart';
+import 'package:scopeindiaapp/courses.dart';
 import 'package:scopeindiaapp/homepage.dart';
 
 class sample extends StatefulWidget {
@@ -12,7 +12,7 @@ class sample extends StatefulWidget {
 class _sampleState extends State<sample> {
   List <Widget> pages = [
     homePage(),
-    coursepage(),
+    courses(),
   ];
 
   var index = 0;

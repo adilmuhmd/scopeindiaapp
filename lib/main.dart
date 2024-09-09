@@ -3,7 +3,8 @@ import 'package:scopeindiaapp/firebase_options.dart';
 import 'package:scopeindiaapp/homepage.dart';
 import 'package:scopeindiaapp/homes.dart';
 import 'package:scopeindiaapp/loginpage.dart';
-import 'package:scopeindiaapp/navigationpage.dart';
+import 'package:scopeindiaapp/sample2.dart';
+import 'package:scopeindiaapp/sample3.dart';
 import 'package:scopeindiaapp/samplepage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -21,7 +22,7 @@ Future<List<Map<String, dynamic>>> getUserData() async {
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options:DefaultFirebaseOptions.currentPlatform);
-  runApp(navpage());
+  runApp(scopeindia());
 }
 
 
