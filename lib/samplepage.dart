@@ -1,47 +1,58 @@
 import 'package:flutter/material.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+import 'package:scopeindiaapp/courses.dart';
+import 'package:scopeindiaapp/homepage.dart';
 
-class YouTubePlayerExample extends StatefulWidget {
+class sample extends StatefulWidget {
+  const sample({super.key});
+
   @override
-  _YouTubePlayerExampleState createState() => _YouTubePlayerExampleState();
+  State<sample> createState() => _sampleState();
 }
 
-class _YouTubePlayerExampleState extends State<YouTubePlayerExample> {
-  late YoutubePlayerController _controller;
+class _sampleState extends State<sample> {
+  List <Widget> pages = [
+    homePage(),
+    courses(),
+  ];
 
-  @override
-  void initState() {
-    super.initState();
-    _controller = YoutubePlayerController(
-      initialVideoId: 'https://www.youtube.com/shorts/eIFj4nYNYbw?',  // Replace with your video ID
-      flags: YoutubePlayerFlags(
-        autoPlay: true,
-        mute: false,
-      ),
-    );
-  }
-
+  var index = 0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('YouTube Player Example'),
-      ),
-      body: Column(
-        children: [
-          YoutubePlayer(
-            controller: _controller,
-            showVideoProgressIndicator: true,
-          ),
-          // Additional widgets can go here
-        ],
+    return  MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: pages[index],
+        bottomNavigationBar: BottomNavigationBar(
+          items: [
+            BottomNavigationBarItem(icon: Icon(
+                Icons.home_filled
+            ),
+                label: "HOME"
+            ),
+            BottomNavigationBarItem(icon: Icon(
+                Icons.book
+            ),
+                label: "COURSES"
+            ),
+            BottomNavigationBarItem(icon: Icon(
+                Icons.people_alt
+            ),
+                label: "PLACEMENT CELL"
+            ),
+          ],
+          backgroundColor: Color.fromARGB(255,0,0,139),
+          unselectedItemColor: Colors.white,
+          selectedItemColor: Color.fromARGB(255,255,215,0),
+          onTap: (x) {
+            setState(() {
+              index=x;
+            }
+            );
+          },
+          currentIndex: index,
+
+        ),
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
   }
 }
