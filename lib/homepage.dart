@@ -34,6 +34,7 @@ class _homePageState extends State<homePage> {
   ];
   var size,height,width;
   var index = 0;
+
   final videoURL = "https://www.youtube.com/watch?v=YMx8Bbev6T4";
   var namecontroller = TextEditingController();
 
